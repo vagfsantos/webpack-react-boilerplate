@@ -4,14 +4,20 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'public/assets/js')
     },
 
     module: {
         rules: [
             {
                 test: /\.scss$/,
-                use: ["style-loader", "css-loader", "sass-loader"]
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
             },
 
             {
@@ -29,7 +35,7 @@ module.exports = {
 
     devServer: {
         inline: true,
-        contentBase: './',
+        contentBase: './public',
         port: 3333
     }
 };

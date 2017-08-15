@@ -1,0 +1,1 @@
+import Style from './scss/_export.scss';
