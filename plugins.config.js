@@ -1,8 +1,15 @@
 const path = require('path');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = [
+    new CleanWebpackPlugin([
+        './public', './dist'
+    ], {
+        "verbose": true
+    }),
+
     new CopyWebpackPlugin([
         {
             from: './src/images/',
