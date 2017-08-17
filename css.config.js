@@ -6,7 +6,7 @@ module.exports = [
     {
         loader: "css-loader",
         options: {
-            minimize: true
+            minimize: process.env.NODE_ENV === 'dist'
         }
     },
 

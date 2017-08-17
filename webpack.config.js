@@ -4,7 +4,7 @@ module.exports = {
     entry: ['./src/index.js'],
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'public/assets/js')
+        path: path.resolve(__dirname, process.env.NODE_ENV ===  'dist' ? 'dist/assets/js': 'public/assets/js')
     },
     
     devServer: require('./server.config.js'),

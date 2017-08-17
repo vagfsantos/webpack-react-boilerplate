@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack --color --progress --define process.env.NODE_ENV='\"dev\"'",
-    "build": "webpack --color --progress --define process.env.NODE_ENV='\"dist\"'",
-    "server": "webpack-dev-server --color --watch-poll",
-    "start": "npm run server && npm run webpack --define process.env.NODE_ENV='\"dev\"'",
+    "webpack": "cross-env NODE_ENV=dev webpack --color --progress",
+    "build": "cross-env NODE_ENV=dist webpack --color --progress",
+    "server": "cross-env NODE_ENV=dev webpack-dev-server --color --watch-poll",
+    "start": "cross-env NODE_ENV=dev npm run server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "bootstrap-sass": "^3.3.7",
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^5.0.5",
     "css-loader": "^0.28.4",
     "eslint": "^4.4.1",
     "eslint-loader": "^1.9.0",

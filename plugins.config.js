@@ -20,7 +20,7 @@ module.exports = [
         },
         {
             from: './src/index.html',
-            to: path.resolve(__dirname, 'public/')
+            to: process.env.NODE_ENV === 'dist' ? path.resolve(__dirname, 'dist/') : path.resolve(__dirname, 'public/')
         }
     ]),
 
