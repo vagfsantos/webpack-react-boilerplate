@@ -1,10 +1,12 @@
-var path = require('path');
-
-module.exports = [{
-    loader: 'babel-loader',
-    options: {
-        presets: ['react', 'es2015']
+module.exports = [
+    {
+        loader: 'babel-loader',
+        options: {
+            presets: ['react', 'es2015']
+        }
     },
-    
-    loader: 'eslint-loader'
-}]
+
+    {
+        loader: 'eslint-loader'
+    }
+]

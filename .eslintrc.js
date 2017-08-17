@@ -1,6 +1,10 @@
 module.exports = {
     "parser": "babel-eslint",
     "extends": "eslint:recommended",
+    "env": {
+        "browser": true,
+        "node": true
+    },
     "parserOptions": {
         "sourceType": "module",
         "allowImportExportEverywhere": false,
@@ -12,10 +16,8 @@ module.exports = {
     "rules": {
         // enable additional rules
         "indent": ["warn", 4],
-        "linebreak-style": ["error", "unix"],
-        "quotes": ["warn", "double"],
-        "semi": ["warn", "always"],
-
+        "no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+        
         // override default options for rules from base configurations
         "comma-dangle": ["warn", "always"],
         "no-cond-assign": ["warn", "always"],
