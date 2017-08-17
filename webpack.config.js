@@ -11,23 +11,23 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: require('./css.config.js')
+                use: require('./config/css.config.js')
             },
 
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: require('./javascript.config.js')
+                use: require('./config/javascript.config.js')
             },
 
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                use: require('./image.config.js')
+                use: require('./config/image.config.js')
             }
         ]
     },
 
-    plugins: require('./plugins.config.js'),
+    plugins: require('./config/plugins.config.js'),
 
-    devServer: require('./server.config.js')
+    devServer: require('./config/server.config.js')
 };
