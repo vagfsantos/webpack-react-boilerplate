@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --color",
-    "server": "webpack-dev-server",
+    "webpack": "webpack --color --progress --define process.env.NODE_ENV='\"dev\"'",
+    "build": "webpack --color --progress --define process.env.NODE_ENV='\"dist\"'",
+    "server": "webpack-dev-server --color --watch-poll",
+    "start": "npm run server && npm run webpack --define process.env.NODE_ENV='\"dev\"'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

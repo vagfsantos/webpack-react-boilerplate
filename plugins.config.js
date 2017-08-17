@@ -1,11 +1,14 @@
 const path = require('path');
+const webpack = require('webpack');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = [
+    new webpack.HotModuleReplacementPlugin(),
+
     new CleanWebpackPlugin([
-        './public', './dist'
+        path.resolve(__dirname, 'public/'), path.resolve(__dirname, 'dist/')
     ], {
         "verbose": true
     }),
